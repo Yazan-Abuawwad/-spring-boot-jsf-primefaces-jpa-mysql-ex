@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"  xmlns:h="http://java.sun.com/jsf/html"  xmlns:p="http://primefaces.org/ui"
+				xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" >
+
+<h:head>
+<title>student</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Condensed&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet" />
+<!--//online-fonts -->
+</h:head>
+<h:body>
+<div class="header">
+	<h1>student data</h1>
+</div>
+
+<div class="w3-main">
+	<!-- Main -->
+	<div class="about-bottom">
+		<div class="w3l_about_bottom_right two">
+			<h2 class="tittle">info</h2>
+			<div class="book-form">
+
+			    <h:form id="form">
+			    	<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+
+					<div class="form-date-w3-agileits">
+						<label> Name :</label>
+						<p:inputText id="name" value="#{formController.reserva.name}" requiredMessage="" />
+					</div>
+					<div class="form-date-w3-agileits second-agile">
+						<label> Email :</label>
+						<p:inputText id="mail" value="#{formController.reserva.email}"  />
+					</div>
+					<div class="form-date-w3-agileits">
+						<label>   age  :  </label>
+						<p:inputText id="age" value="#{formController.reserva.age}"  />
+					</div>
+					<div class="form-date-w3-agileits">
+						<label> gender:</label>
+						<p:inputText id="gender" value="#{formController.reserva.gender}" />
+
+					</div>
+					<div class="form-date-w3-agileits">
+						<label> address:</label>
+						<p:inputText id="address" value="#{formController.reserva.address}" />
+
+					</div>
+
+					<div class="form-date-w3-agileits">
+						<h:outputLabel rendered="#{formController.reserva.token != null}"> Reserva Realizada :</h:outputLabel>
+						<h:outputText id="reservaRealizada" value="#{formController.reserva.token}" rendered="#{formController.reserva.token != null}" />
+
+					</div>
+
+					<div class="make wow shake">
+						<p:commandButton value="Reservar" id="reservar" update="form" actionListener="#{formController.submit}" />
+					</div>
+
+					<p:separator />
+
+					<div class="make wow shake">
+						<p:commandButton value="Reset" id="reset" update="form" actionListener="#{formController.reset}" />
+					</div>	<div class="make wow shake2">
+
+
+
+					<h:outputLabel > token :</h:outputLabel>
+
+
+					<p:inputText id="tokenid" value="#{formController.token}"  />
+						<p:commandButton value="Reset" id="reset2" update="form" actionListener="#{formController.reset2}" />
+					</div>
+				</h:form>
+			</div>
+
+		</div>
+
+
+		<div class="clear"> </div>
+	</div>
+</div>
+<!-- //Main -->
+
+<!-- footer -->
+
+<!-- //footer -->
+
+</h:body>
+
+</ui:composition>
